@@ -1,6 +1,6 @@
-#### RoadToNecropolis-
+# RoadToNecropolis-
 
-# Ru 
+### Ru 
 
 Эту игру я делал в свободное время пока отдыхал на море. Делал я её чуть меньше 10 дней, однако проект на удивление окозался не плохим.
 ОДНАКО! Поскольку я делал игру с телефона, я не использовал СКВ и на 10-ый день у меня просто сломался кэш 3-4 сцен, из за чего проект пришлось бы долго восстонавливать, правда я, пока что, не вижу в этом смысла.
@@ -8,7 +8,7 @@
 Буду признателен если кто-то знает как восстановить кэш сцен и отпишет мне в дискорд: uhboer
 
 
-# En 
+### En 
 
 I made this game in my free time while i was relaxing my ass at sea. I did it for a little less than 10 days, but the project surprisingly turned out to be not so bad.
 HOWEVER! As I was making the game from my phone, I didn't use VCS like a git, and on the 10s day my cache of 3-4 scenes just broke, which would have taken a long time to rebuild the project, although I don't see the point in it yet.
