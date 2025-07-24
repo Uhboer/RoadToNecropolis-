@@ -1,0 +1,80 @@
+[gd_scene load_steps=3 format=3 uid="uid://hvqxtionsbxc"]
+
+[ext_resource type="Script" uid="uid://b5il7uuvjsxqd" path="res://scripts/deathscreen.gd" id="1_ylnw1"]
+[ext_resource type="FontFile" uid="uid://b54kexujh123l" path="res://fonts/Faithful.ttf" id="2_uurjc"]
+
+[node name="deathscreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -14.0
+offset_right = -33.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ylnw1")
+
+[node name="title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -573.0
+offset_top = 22.0
+offset_right = 573.0
+offset_bottom = 208.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_uurjc")
+theme_override_font_sizes/font_size = 100
+text = "You're die again"
+horizontal_alignment = 1
+
+[node name="to_menu" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -314.0
+offset_top = -210.0
+offset_right = 338.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_uurjc")
+theme_override_font_sizes/font_size = 100
+text = "to menu"
+
+[node name="results" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -229.0
+offset_right = 334.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_uurjc")
+theme_override_font_sizes/font_size = 70
+text = "score: 0
+record score: 0"
+horizontal_alignment = 1
+
+[node name="ending" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[connection signal="pressed" from="to_menu" to="." method="_on_to_menu_pressed"]

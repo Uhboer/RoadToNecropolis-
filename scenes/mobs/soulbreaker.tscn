@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bg72yc2cm3slk"]
+
+[ext_resource type="Texture2D" uid="uid://ce14kbgxr7h4y" path="res://sprites/soulbracker.png" id="1_f1rot"]
+[ext_resource type="Script" uid="uid://ca6pvduecjjti" path="res://scripts/enemy.gd" id="1_ykp7m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ev43"]
+
+[node name="soulbreaker" type="Area2D"]
+script = ExtResource("1_ykp7m")
+damage = 2
+metadata/_edit_vertical_guides_ = [-16.0]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1.5, 5.96046e-07)
+scale = Vector2(1.4375, 1.25)
+texture = ExtResource("1_f1rot")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3ev43")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://c7dhsrjm2twp1"]
+
+[ext_resource type="Texture2D" uid="uid://derbmu5tjdxr" path="res://sprites/knife.png" id="1_2xf1r"]
+[ext_resource type="Script" uid="uid://cr7mbrxvkaw3d" path="res://scripts/weapon/knife.gd" id="2_6fi8m"]
+[ext_resource type="Texture2D" uid="uid://bycfmksy7c3ui" path="res://sprites/small_slash.png" id="2_dg0bh"]
+[ext_resource type="FontFile" uid="uid://b54kexujh123l" path="res://fonts/Faithful.ttf" id="4_7hrnw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2xf1r"]
+size = Vector2(16, 15)
+
+[node name="knife" type="Sprite2D"]
+texture = ExtResource("1_2xf1r")
+script = ExtResource("2_6fi8m")
+cd = 0.1
+long = 0.8
+usings = 8
+id = 3
+
+[node name="attack" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attack"]
+position = Vector2(17, 0)
+shape = SubResource("RectangleShape2D_2xf1r")
+
+[node name="arc" type="Sprite2D" parent="."]
+position = Vector2(17, 0)
+scale = Vector2(1, 0.9375)
+texture = ExtResource("2_dg0bh")
+
+[node name="usings" type="Label" parent="."]
+offset_left = -5.0
+offset_top = -30.0
+offset_right = 5.0
+offset_bottom = -7.0
+theme_override_fonts/font = ExtResource("4_7hrnw")
+text = "8"
+
+[connection signal="area_entered" from="attack" to="." method="_on_attack_area_entered"]

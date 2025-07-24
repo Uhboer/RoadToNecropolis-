@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://xmuup7q04h48"]
+
+[ext_resource type="Texture2D" uid="uid://c56v5y4if16m8" path="res://sprites/weapon.png" id="1_6kub0"]
+[ext_resource type="Script" uid="uid://do56wixob822k" path="res://scripts/weapon/rifle.gd" id="2_hkhc6"]
+[ext_resource type="FontFile" uid="uid://b54kexujh123l" path="res://fonts/Faithful.ttf" id="3_sg1yr"]
+
+[node name="rifle" type="Sprite2D"]
+texture = ExtResource("1_6kub0")
+script = ExtResource("2_hkhc6")
+cd = 0.1
+long = 0.0
+usings = 30
+id = 5
+
+[node name="usings" type="Label" parent="."]
+offset_left = -13.0
+offset_top = -30.0
+offset_right = 14.0
+offset_bottom = -7.0
+theme_override_fonts/font = ExtResource("3_sg1yr")
+text = "30"
+horizontal_alignment = 1

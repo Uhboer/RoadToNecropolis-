@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://0phyei8dws8r"]
+
+[ext_resource type="Texture2D" uid="uid://d1legcs56nwx4" path="res://sprites/sniper.png" id="1_wpcbb"]
+[ext_resource type="Script" uid="uid://do56wixob822k" path="res://scripts/weapon/rifle.gd" id="2_aip7g"]
+[ext_resource type="FontFile" uid="uid://b54kexujh123l" path="res://fonts/Faithful.ttf" id="2_ohs8w"]
+[ext_resource type="PackedScene" uid="uid://cijaau1jusklt" path="res://scenes/weapons/heavybullet.tscn" id="3_aip7g"]
+
+[node name="sniper" type="Sprite2D"]
+texture = ExtResource("1_wpcbb")
+script = ExtResource("2_aip7g")
+bullet_scene = ExtResource("3_aip7g")
+damage = 2
+cd = 0.3
+long = 0.0
+usings = 15
+id = 6
+
+[node name="usings" type="Label" parent="."]
+offset_left = -13.0
+offset_top = -30.0
+offset_right = 14.0
+offset_bottom = -7.0
+theme_override_fonts/font = ExtResource("2_ohs8w")
+text = "15"
+horizontal_alignment = 1

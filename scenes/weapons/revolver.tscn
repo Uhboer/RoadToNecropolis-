@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://dj5w4jsh7lbmf"]
+
+[ext_resource type="Texture2D" uid="uid://cq47inq1f101q" path="res://sprites/revolver.png" id="1_r2l5f"]
+[ext_resource type="Script" uid="uid://do56wixob822k" path="res://scripts/weapon/rifle.gd" id="2_y8ai0"]
+[ext_resource type="FontFile" uid="uid://b54kexujh123l" path="res://fonts/Faithful.ttf" id="3_m70vx"]
+[ext_resource type="PackedScene" uid="uid://cijaau1jusklt" path="res://scenes/weapons/heavybullet.tscn" id="3_y8ai0"]
+
+[node name="revolver" type="Sprite2D"]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("1_r2l5f")
+script = ExtResource("2_y8ai0")
+bullet_scene = ExtResource("3_y8ai0")
+cd = 0.3
+long = 0.0
+usings = 6
+id = 8
+
+[node name="usings" type="Label" parent="."]
+offset_left = -13.0
+offset_top = -30.0
+offset_right = 14.0
+offset_bottom = -7.0
+theme_override_fonts/font = ExtResource("3_m70vx")
+text = "30"
+horizontal_alignment = 1

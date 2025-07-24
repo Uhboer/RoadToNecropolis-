@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://dfqrmcclas6u8"]
+
+[ext_resource type="Texture2D" uid="uid://cxqxekq83yv32" path="res://sprites/axe.png" id="1_w43rl"]
+[ext_resource type="Texture2D" uid="uid://cb8388yn56ivb" path="res://sprites/smash.png" id="2_5wbh6"]
+[ext_resource type="Script" uid="uid://bdritleq1jijn" path="res://scripts/weapon/axe.gd" id="2_oxs5o"]
+[ext_resource type="FontFile" uid="uid://b54kexujh123l" path="res://fonts/Faithful.ttf" id="4_oxs5o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oxs5o"]
+size = Vector2(16.4211, 14.4)
+
+[node name="axe" type="Sprite2D"]
+scale = Vector2(1.1875, 1.25)
+texture = ExtResource("1_w43rl")
+script = ExtResource("2_oxs5o")
+damage = 2
+long = 1.5
+id = 4
+
+[node name="attack" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attack"]
+position = Vector2(16.2105, 0.8)
+shape = SubResource("RectangleShape2D_oxs5o")
+
+[node name="arc" type="Sprite2D" parent="."]
+position = Vector2(16.2105, 0.8)
+scale = Vector2(1.02632, 0.9)
+texture = ExtResource("2_5wbh6")
+
+[node name="usings" type="Label" parent="."]
+offset_left = -5.0
+offset_top = -30.0
+offset_right = 5.0
+offset_bottom = -7.0
+theme_override_fonts/font = ExtResource("4_oxs5o")
+text = "5"
+
+[connection signal="area_entered" from="attack" to="." method="_on_attack_area_entered"]

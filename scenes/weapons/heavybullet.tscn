@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cijaau1jusklt"]
+
+[ext_resource type="Script" uid="uid://wad06xq1q3xy" path="res://scripts/weapon/bullet.gd" id="1_pkqtx"]
+[ext_resource type="Texture2D" uid="uid://cq0l7fg44r3yh" path="res://sprites/heavy_bullet.png" id="2_pkqtx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pkqtx"]
+size = Vector2(13.5, 5)
+
+[node name="heavybullet" type="Area2D"]
+script = ExtResource("1_pkqtx")
+heavy = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.5, 0)
+shape = SubResource("RectangleShape2D_pkqtx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_pkqtx")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

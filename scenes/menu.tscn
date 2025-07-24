@@ -1,0 +1,237 @@
+[gd_scene load_steps=8 format=3 uid="uid://n264cinus0av"]
+
+[ext_resource type="Script" uid="uid://bmgy5fcxise1k" path="res://scripts/menu.gd" id="1_yqeox"]
+[ext_resource type="Material" uid="uid://rii3x7f3pqgn" path="res://shaders/CircularFadeOutShader/fade_out_mat.tres" id="2_mhnvy"]
+[ext_resource type="FontFile" uid="uid://b54kexujh123l" path="res://fonts/Faithful.ttf" id="2_v86rl"]
+[ext_resource type="Texture2D" uid="uid://dlfrlkcc3r2sm" path="res://pixel.png" id="3_4ytvr"]
+[ext_resource type="Script" uid="uid://d0im4frdk40ef" path="res://shaders/CircularFadeOutShader/circular_fade_out_script.gd" id="4_g3eks"]
+[ext_resource type="Texture2D" uid="uid://cvcp18wib7usd" path="res://sprites/menu.png" id="5_4ytvr"]
+[ext_resource type="Script" uid="uid://i4eaql3bi5hn" path="res://scenes/menu_bg.gd" id="5_g3eks"]
+
+[node name="menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yqeox")
+metadata/_edit_vertical_guides_ = [-365.0, -341.0, -534.0, -263.0]
+
+[node name="main" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="play" type="Button" parent="main"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -698.0
+offset_top = -272.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_v86rl")
+theme_override_font_sizes/font_size = 70
+text = "PLAY"
+
+[node name="credits_but" type="Button" parent="main"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = 165.0
+offset_right = 392.0
+offset_bottom = 400.0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_v86rl")
+theme_override_font_sizes/font_size = 70
+text = "credits"
+
+[node name="shop_but" type="Button" parent="main"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -80.0
+offset_right = 392.0
+offset_bottom = 155.0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_v86rl")
+theme_override_font_sizes/font_size = 70
+text = "shop"
+
+[node name="statistic_but" type="Button" parent="main"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -325.0
+offset_right = 392.0
+offset_bottom = -90.0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_v86rl")
+theme_override_font_sizes/font_size = 70
+text = "statistic"
+
+[node name="title" type="Label" parent="main"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -373.0
+offset_right = 373.0
+offset_bottom = 147.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_v86rl")
+theme_override_font_sizes/font_size = 120
+text = "Road To Necropolis"
+horizontal_alignment = 1
+
+[node name="record" type="Label" parent="main"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -447.0
+offset_top = -333.0
+offset_right = 1.0
+offset_bottom = -273.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_v86rl")
+theme_override_font_sizes/font_size = 60
+text = "record: 0"
+
+[node name="shop" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="back_shop" type="Button" parent="shop"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -380.0
+offset_bottom = 156.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 90
+text = "back"
+
+[node name="credits" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="back_credits" type="Button" parent="credits"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -380.0
+offset_bottom = 156.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 90
+text = "back"
+
+[node name="statistic" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="back_statistic" type="Button" parent="statistic"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -380.0
+offset_bottom = 156.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 90
+text = "back"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control"]
+z_index = 7
+material = ExtResource("2_mhnvy")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_4ytvr")
+script = ExtResource("4_g3eks")
+
+[node name="menu_bg" type="ParallaxBackground" parent="."]
+script = ExtResource("5_g3eks")
+speed = 200
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="menu_bg"]
+motion_mirroring = Vector2(3400, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="menu_bg/ParallaxLayer"]
+position = Vector2(1716, 481.5)
+scale = Vector2(26.794, 29.0294)
+texture = ExtResource("5_4ytvr")
+
+[node name="starting" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[connection signal="pressed" from="main/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="main/play" to="CanvasLayer/Control/TextureRect" method="_on_play_pressed"]
+[connection signal="pressed" from="main/credits_but" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="main/credits_but" to="CanvasLayer/Control/TextureRect" method="_on_credits_pressed"]
+[connection signal="pressed" from="main/shop_but" to="." method="_on_shop_pressed"]
+[connection signal="pressed" from="main/shop_but" to="CanvasLayer/Control/TextureRect" method="_on_shop_pressed"]
+[connection signal="pressed" from="main/statistic_but" to="." method="_on_statistic_pressed"]
+[connection signal="pressed" from="main/statistic_but" to="CanvasLayer/Control/TextureRect" method="_on_statistic_pressed"]
+[connection signal="pressed" from="shop/back_shop" to="." method="_on_back_shop_pressed"]
+[connection signal="pressed" from="shop/back_shop" to="CanvasLayer/Control/TextureRect" method="_on_back_shop_pressed"]
+[connection signal="pressed" from="credits/back_credits" to="." method="_on_back_credits_pressed"]
+[connection signal="pressed" from="credits/back_credits" to="CanvasLayer/Control/TextureRect" method="_on_back_credits_pressed"]
+[connection signal="pressed" from="statistic/back_statistic" to="." method="_on_back_statistic_pressed"]
+[connection signal="pressed" from="statistic/back_statistic" to="CanvasLayer/Control/TextureRect" method="_on_back_statistic_pressed"]

@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://d4m4mkip4eb2d"]
+
+[ext_resource type="Texture2D" uid="uid://ddjy35siibmiw" path="res://sprites/sword.png" id="1_58ehi"]
+[ext_resource type="Script" uid="uid://bd4ss18y7edfh" path="res://scripts/weapon/sword.gd" id="2_gwb47"]
+[ext_resource type="Texture2D" uid="uid://d26lvjsuskvlt" path="res://sprites/slash.png" id="3_11jj1"]
+[ext_resource type="FontFile" uid="uid://b54kexujh123l" path="res://fonts/Faithful.ttf" id="4_gwb47"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n355p"]
+size = Vector2(17.6, 16)
+
+[node name="sword" type="Sprite2D"]
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("1_58ehi")
+script = ExtResource("2_gwb47")
+cd = 0.2
+id = 1
+
+[node name="attack" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attack"]
+position = Vector2(16.8, -9.53674e-08)
+shape = SubResource("RectangleShape2D_n355p")
+
+[node name="arc" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(17.6, 0)
+texture = ExtResource("3_11jj1")
+
+[node name="usings" type="Label" parent="."]
+offset_left = -5.0
+offset_top = -30.0
+offset_right = 5.0
+offset_bottom = -7.0
+theme_override_fonts/font = ExtResource("4_gwb47")
+text = "5"
+
+[connection signal="area_entered" from="attack" to="." method="_on_attack_area_entered"]
